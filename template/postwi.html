@@ -1,0 +1,41 @@
+<!--posts with input-->
+{% extends 'base.html'%}
+ 
+{% block head %}
+<title> Posts</title>
+{% endblock %}
+
+
+{% block body%}
+<h1> All Posts</h1>
+<hr>
+<h2> Create New Blog Posts:</h2>
+<form action='/posts' method='POST'> <!-- action specify from which url data is sended to the database-->
+    <label for="post">Title:</label>
+    <input class="form-control" type="text"  name='title' id='title' placeholder="Enter the title" aria-label="Enter the title">
+    <br/>
+    <label for="post">Post:</label>
+    <textarea class="form-control" id="content" name="content" rows="3" placeholder="Enter the Content" aria-label="Enter the content"></textarea>
+    <br/>
+    <label for="post">Author:</label>
+    <input class="form-control" type="text"  name='author' id='author' placeholder="Enter the author name" aria-label="Enter the author name">
+    <br/>
+    <input type='submit'  class="btn btn-success" value='Post'>
+</form> 
+<hr>
+<!--<p>{{post}}<p>-->
+{% for post in posts %}
+    <h2>{{post.title}}</h2> <!-- double curly braces is used to print or display the data-->
+    {% if post.author %}
+        <small>Written By:{{post.author}} on {{post.date_posted}}</small>
+    {% else %}
+        <h3>Written By:Unknown on {{post.date_posted}}</h3>
+    {% endif %}
+    <br>
+    <p style="white-space: pre-wrap;">{{post.content}}</p>
+    <a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete</a>
+    <a class='btn btn-primary' href="/posts/edit/{{post.id}}">Edit</a>
+
+    <hr/>
+{% endfor %}
+{% endblock %}

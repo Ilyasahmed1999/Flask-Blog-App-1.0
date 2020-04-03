@@ -1,0 +1,19 @@
+{% extends 'base.html' %} <!-- used to inherits the content of the base,html-->
+{% block head %}
+<title> HomePage</title>
+{% endblock %} 
+
+{% block body %} 
+<h1> HomePage(Brodas Upload or Read the Posts)</h1>
+<main role="main">
+    <div class="jumbotron">
+      <div class="col-sm-8 mx-auto">
+        <h1>Welcome!</h1>
+        <p> Welcome to helloworld_with_ilyas Blog. here we will be discussing about Programming Languages,Machine Learning  and anything related to Computer Science </p>
+        <p> Do visit this github account for more projects<a href="https://github.com/Ilyasahmed1999">https://github.com/Ilyasahmed1999</a>
+          <a class="btn btn-primary" href="/posts" role="button">Go To Posts &raquo;</a>
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock %} 

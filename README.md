@@ -5,7 +5,7 @@ Technologies used:
 1)Python 3.7 - Programming Language
 2)Flask - Python Web Development FrameWork
 3)SQL Alchemy- SQL Data base library
-4)Visual Studio Code
+4)Visual Studio Code - Code Editor(IDE)
 
 Todo:
 1)To Make UI changes. so that it gives a great user experience
